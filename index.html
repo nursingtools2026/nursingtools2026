@@ -5,135 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nursing Tools</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
-header{background:#1769aa;color:white;padding:28px 18px;text-align:center}
-header h1{margin:0 0 8px;font-size:30px}header p{margin:0;opacity:.9}
-.container{max-width:950px;margin:25px auto;padding:0 16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:white;border-radius:16px;padding:20px;box-shadow:0 5px 18px #00000012}
-.card h2{margin-top:0;font-size:20px}.card p{color:#596579}
-input,button{width:100%;padding:12px;margin:6px 0;border-radius:9px;font-size:16px}
-input{border:1px solid #ccd5e0}button{border:0;background:#1769aa;color:white;font-weight:bold;cursor:pointer}
-.result{margin-top:10px;padding:12px;background:#eef6ff;border-radius:9px;font-weight:bold}
-footer{text-align:center;padding:30px;color:#687386}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}.hero{background:linear-gradient(135deg,#1769aa,#0d8b9e);color:#fff;padding:34px 18px;text-align:center}.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:0;opacity:.93}.container{max-width:1000px;margin:22px auto;padding:0 15px}.toolbar{background:#fff;border-radius:14px;padding:14px;box-shadow:0 5px 18px #00000010;margin-bottom:18px}.toolbar input{width:100%;padding:12px;border:1px solid #ccd5e0;border-radius:10px;font-size:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 5px 18px #00000012}.card h2{margin-top:0;font-size:20px}.card p{color:#596579;line-height:1.5}input,button{width:100%;padding:12px;margin:6px 0;border-radius:9px;font-size:16px}input{border:1px solid #ccd5e0}button{border:0;background:#1769aa;color:white;font-weight:bold;cursor:pointer}.result{margin-top:10px;padding:12px;background:#eef6ff;border-radius:9px;font-weight:bold;min-height:20px}.tag{display:inline-block;background:#e7f4f7;color:#0d7180;padding:5px 9px;border-radius:999px;font-size:12px;margin-bottom:10px}.hidden{display:none}footer{text-align:center;padding:30px 16px;color:#687386;line-height:1.5}.section-title{margin:8px 0 14px}
 </style>
 </head>
 <body>
-<header>
-<h1>🩺 Nursing Tools</h1>
-<p>Simple educational calculators for nursing students</p>
-</header>
-
+<header class="hero"><h1>🩺 Nursing Tools</h1><p>Simple educational tools for nursing students</p></header>
 <div class="container">
-<div class="grid">
-
-<div class="card">
-<h2>⚖️ BMI Calculator</h2>
-<input id="weight" type="number" placeholder="Weight (kg)">
-<input id="height" type="number" placeholder="Height (cm)">
-<button onclick="bmi()">Calculate BMI</button>
-<div id="bmiResult" class="result">Result will appear here</div>
-</div>
-
-<div class="card">
-<h2>💧 IV Flow Rate</h2>
-<input id="volume" type="number" placeholder="Volume (mL)">
-<input id="time" type="number" placeholder="Time (hours)">
-<button onclick="iv()">Calculate mL/hour</button>
-<div id="ivResult" class="result">Result will appear here</div>
-</div>
-
-<div class="card">
-<h2>💧 Drip Rate</h2>
-<input id="ivVol" type="number" placeholder="Volume (mL)">
-<input id="ivMin" type="number" placeholder="Time (minutes)">
-<input id="drop" type="number" placeholder="Drop factor (gtt/mL)">
-<button onclick="drip()">Calculate gtt/min</button>
-<div id="dripResult" class="result">Result will appear here</div>
-</div>
-
-<div class="card">
-<h2>🔄 Unit Converter</h2>
-<input id="ml" type="number" placeholder="mL">
-<button onclick="convert()">Convert mL → L</button>
-<div id="unitResult" class="result">Result will appear here</div>
-</div>
-
-<div class="card">
-<h2>👶 APGAR Calculator</h2>
-<p>Enter the score for each APGAR component (0–2).</p>
-<input id="appearance" type="number" min="0" max="2" placeholder="Appearance (0–2)">
-<input id="pulse" type="number" min="0" max="2" placeholder="Pulse (0–2)">
-<input id="grimace" type="number" min="0" max="2" placeholder="Grimace (0–2)">
-<input id="activity" type="number" min="0" max="2" placeholder="Activity (0–2)">
-<input id="respiration" type="number" min="0" max="2" placeholder="Respiration (0–2)">
-<button onclick="apgar()">Calculate APGAR</button>
-<div id="apgarResult" class="result">Result will appear here</div>
-</div>
-
-<div class="card">
-<h2>📝 Nursing Quiz</h2>
-<p>Which vital sign is normally measured in beats per minute?</p>
-<button onclick="quiz(true)">A) Pulse</button>
-<button onclick="quiz(false)">B) Temperature</button>
-<div id="quizResult" class="result">Choose an answer</div>
-</div>
-
-<div class="card">
-<h2>📚 Medical Abbreviations</h2>
-<p><b>BP</b> = Blood Pressure</p>
-<p><b>HR</b> = Heart Rate</p>
-<p><b>RR</b> = Respiratory Rate</p>
-<p><b>IV</b> = Intravenous</p>
-<p><b>IM</b> = Intramuscular</p>
-<p><b>I/O</b> = Intake and Output</p>
-</div>
-
-</div>
-</div>
-
-<footer>
-Educational use only — always follow your instructor, hospital policy, and approved clinical references.
-</footer>
-
+<div class="toolbar"><input id="search" type="search" placeholder="🔎 Search tools, abbreviations, quiz..." oninput="filterCards()"></div>
+<div class="grid" id="cards">
+<div class="card tool"><span class="tag">Calculator</span><h2>⚖️ BMI Calculator</h2><input id="weight" type="number" placeholder="Weight (kg)"><input id="height" type="number" placeholder="Height (cm)"><button onclick="bmi()">Calculate BMI</button><div id="bmiResult" class="result">Result will appear here</div></div>
+<div class="card tool"><span class="tag">Calculator</span><h2>💧 IV Flow Rate</h2><input id="volume" type="number" placeholder="Volume (mL)"><input id="time" type="number" placeholder="Time (hours)"><button onclick="iv()">Calculate mL/hour</button><div id="ivResult" class="result">Result will appear here</div></div>
+<div class="card tool"><span class="tag">Calculator</span><h2>💧 Drip Rate</h2><input id="ivVol" type="number" placeholder="Volume (mL)"><input id="ivMin" type="number" placeholder="Time (minutes)"><input id="drop" type="number" placeholder="Drop factor (gtt/mL)"><button onclick="drip()">Calculate gtt/min</button><div id="dripResult" class="result">Result will appear here</div></div>
+<div class="card tool"><span class="tag">Converter</span><h2>🔄 Unit Converter</h2><input id="ml" type="number" placeholder="mL"><button onclick="convert()">Convert mL → L</button><div id="unitResult" class="result">Result will appear here</div></div>
+<div class="card tool"><span class="tag">Newborn</span><h2>👶 APGAR Calculator</h2><p>Enter each component score from 0–2.</p><input id="appearance" type="number" min="0" max="2" placeholder="Appearance (0–2)"><input id="pulse" type="number" min="0" max="2" placeholder="Pulse (0–2)"><input id="grimace" type="number" min="0" max="2" placeholder="Grimace (0–2)"><input id="activity" type="number" min="0" max="2" placeholder="Activity (0–2)"><input id="respiration" type="number" min="0" max="2" placeholder="Respiration (0–2)"><button onclick="apgar()">Calculate APGAR</button><div id="apgarResult" class="result">Result will appear here</div></div>
+<div class="card tool"><span class="tag">Quiz</span><h2>📝 Nursing Quiz</h2><p>Which vital sign is normally measured in beats per minute?</p><button onclick="quiz(true)">A) Pulse</button><button onclick="quiz(false)">B) Temperature</button><div id="quizResult" class="result">Choose an answer</div></div>
+<div class="card tool"><span class="tag">Reference</span><h2>📚 Medical Abbreviations</h2><p><b>BP</b> = Blood Pressure</p><p><b>HR</b> = Heart Rate</p><p><b>RR</b> = Respiratory Rate</p><p><b>IV</b> = Intravenous</p><p><b>IM</b> = Intramuscular</p><p><b>I/O</b> = Intake and Output</p></div>
+</div></div>
+<footer>Educational use only. Always verify calculations and clinical decisions with your instructor, hospital policy, and approved clinical references.</footer>
 <script>
-function bmi(){
- const w=Number(document.getElementById('weight').value);
- const h=Number(document.getElementById('height').value)/100;
- if(w<=0||h<=0){bmiResult.textContent="Enter valid values";return}
- const x=w/(h*h);
- bmiResult.textContent="BMI = "+x.toFixed(1);
-}
-function iv(){
- const v=Number(document.getElementById('volume').value);
- const t=Number(document.getElementById('time').value);
- if(v<=0||t<=0){ivResult.textContent="Enter valid values";return}
- ivResult.textContent="Rate = "+(v/t).toFixed(1)+" mL/hour";
-}
-function drip(){
- const v=Number(document.getElementById('ivVol').value);
- const m=Number(document.getElementById('ivMin').value);
- const d=Number(document.getElementById('drop').value);
- if(v<=0||m<=0||d<=0){dripResult.textContent="Enter valid values";return}
- dripResult.textContent="Drip rate = "+Math.round((v*d)/m)+" gtt/min";
-}
-function convert(){
- const v=Number(document.getElementById('ml').value);
- if(v<0){unitResult.textContent="Enter a valid value";return}
- unitResult.textContent=v+" mL = "+(v/1000)+" L";
-}
-function apgar(){
- const ids=["appearance","pulse","grimace","activity","respiration"];
- const scores=ids.map(id=>Number(document.getElementById(id).value));
- if(scores.some(x=>!Number.isInteger(x)||x<0||x>2)){
-   apgarResult.textContent="Enter a score from 0 to 2 for every item"; return;
- }
- const total=scores.reduce((a,b)=>a+b,0);
- apgarResult.textContent="APGAR Score = "+total+"/10";
-}
-function quiz(correct){
- quizResult.textContent=correct ? "✅ Correct! Pulse is measured in beats per minute." : "❌ Incorrect. The correct answer is Pulse.";
-}
+function val(id){return Number(document.getElementById(id).value)}
+function bmi(){let w=val('weight'),h=val('height')/100;if(w<=0||h<=0){bmiResult.textContent='Enter valid values';return}bmiResult.textContent='BMI = '+(w/(h*h)).toFixed(1)}
+function iv(){let v=val('volume'),t=val('time');if(v<=0||t<=0){ivResult.textContent='Enter valid values';return}ivResult.textContent='Rate = '+(v/t).toFixed(1)+' mL/hour'}
+function drip(){let v=val('ivVol'),m=val('ivMin'),d=val('drop');if(v<=0||m<=0||d<=0){dripResult.textContent='Enter valid values';return}dripResult.textContent='Drip rate = '+Math.round((v*d)/m)+' gtt/min'}
+function convert(){let v=val('ml');if(v<0){unitResult.textContent='Enter a valid value';return}unitResult.textContent=v+' mL = '+(v/1000)+' L'}
+function apgar(){let ids=['appearance','pulse','grimace','activity','respiration'],s=ids.map(val);if(s.some(x=>!Number.isInteger(x)||x<0||x>2)){apgarResult.textContent='Enter a score from 0 to 2 for every item';return}apgarResult.textContent='APGAR Score = '+s.reduce((a,b)=>a+b,0)+'/10'}
+function quiz(correct){quizResult.textContent=correct?'✅ Correct! Pulse is measured in beats per minute.':'❌ Incorrect. The correct answer is Pulse.'}
+function filterCards(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.tool').forEach(c=>c.classList.toggle('hidden',!c.innerText.toLowerCase().includes(q)))}
 </script>
 </body>
 </html>
